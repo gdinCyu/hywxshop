@@ -1,0 +1,199 @@
+<style lang="less">
+  .page{
+    background-color: #fff;
+  }
+  .circle{
+    width: 320rpx;
+    height: 320rpx;
+    border-radius: 50%;
+    background-color: #FC9560;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+  }
+  .page__hd{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 392rpx;
+    background-color: #F7F7F7;
+  }
+  .text_ava{
+    font-size: 68rpx;
+    color: #fff;
+  }
+  .text_total{
+    font-size: 24rpx;
+    color: #fff;
+    font-weight: 200;
+  }
+  .line1{
+    width: 100%;
+    height: 12rpx;
+    background-color: #F7F7F7;
+  }
+  .cash_news{
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    width: 100%;
+    height: 88rpx;
+    background-color: #fff;
+  }
+  .cash_news .text_left{
+    text-align: left;
+    margin-left: 25rpx;
+    font-size: 28rpx;
+  }
+  .cash_news .v_line{
+    margin-left: 25rpx;
+    width: 2rpx;
+    height: 32rpx;
+    background-color: #EA5541;
+  }
+  .cash_news .text_news{
+    margin-left: 25rpx;
+    font-size: 28rpx;
+  }
+  .mine_bd{
+    background-color: #fff;
+    width: 100%;
+  }
+  .wxid{
+    width: 100%;
+    height: 192rpx;
+    background-color: #fff;
+    display: flex;
+    align-items: center;
+  }
+  .wxid .wxid_img{
+    margin-left: 24rpx;
+    width: 120rpx;
+    height: 120rpx;
+    border-radius: 50%;
+  }
+  .wxid_text{
+    margin-left: 24rpx;
+    font-size: 32rpx;
+  }
+  .line{
+    margin-left: 25rpx;
+    width: 702rpx;
+    height: 5rpx;
+    background-color: #F7F7F7;
+  }
+  .order_item{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    height: 88rpx;
+    background-color: #fff;
+  }
+  .order_item_tleft{
+    margin-left: 25rpx;
+    font-size: 32rpx;
+  }
+  .order_item navigator{
+    margin-right: 23rpx;
+  }
+  .text_checkall{
+    color: #999999;
+    font-size: 24rpx;
+  }
+  .grids{
+    position: relative;
+    border: none;
+    width: 100%;
+    background-color: #fff;
+  }
+  .grids .grid_item{
+    border: none;
+  }
+</style>
+<template>
+  <view class="container page">
+    <view class="page__hd">
+      <view class="circle">
+        <text class="text_ava">180.00</text>
+        <text class="text_total">总金额240.00</text>
+      </view>
+    </view>
+
+    <view class="cash_news">
+      <text class="text_left"><text style="color: #EA5541;font-size: 28rpx">提现\n</text>头条</text>
+      <view class="v_line"></view>
+      <text class="text_news">用户******9成功提现了200元</text>
+    </view>
+
+    <view class="line1"></view>
+
+    <view class="mine_bd">
+      <view class="wxid">
+        <view class="wxid_img_view">
+          <image class="wxid_img" src="{{src}}" mode="scaleToFill"></image>
+        </view>
+        <text class="wxid_text">微信ID</text>
+      </view>
+      <view class="line"></view>
+      <view class="order_item">
+        <text class="order_item_tleft">我的订单</text>
+        <navigator url="order" hover-class="navigator-hover"><text class="text_checkall">查看全部</text></navigator>
+      </view>
+    </view>
+      <view class="grids weui-grids">
+        <view class="line1" style="position: absolute;top: 50%;"></view>
+         <block wx:for="{{grids}}" wx:key="*this">
+        <navigator url="" class="grid_item weui-grid" hover-class="weui-grid_active">
+          <view style="position: relative;">
+            <image class="weui-grid__icon" src="{{item.item_icon}}" />
+            <view wx:if="{{item.showBadge}}" class="weui-badge" style="position: absolute;top: -34%;left: 56%">8</view>
+          </view>
+          <view class="weui-grid__label"><text>{{item.item_name}}</text></view>
+        </navigator>
+      </block>
+     </view>
+  </view>
+</template>
+
+<script>
+  import wepy from 'wepy'
+
+  export default class Mine extends wepy.page {
+      config = {
+          navigationBarTitleText: '个人中心'
+      }
+    components = {
+
+    }
+
+    data = {
+        src:'../../images/home/shangchengshouye_xiaoha.png',
+        grids: [
+            {id:0,item_name:'待付款',item_icon:'../../images/mine/icon_obligation.png',showBadge:true},
+            {id:1,item_name:'待收货',item_icon:'../../images/mine/icon_Shipped.png',showBadge:false},
+            {id:2,item_name:'已收货',item_icon:'../../images/mine/icon_Receiving.png',showBadge:false},
+            {id:3,item_name:'管理收货地址',item_icon:'../../images/mine/icon_Address.png',showBadge:false},
+            {id:4,item_name:'联系客服',item_icon:'../../images/mine/icon_contactservice.png',showBadge:false}
+        ],
+        grids_item:['待付款','待收货','已收货','管理收货地址','联系客服']
+    }
+
+    computed = {
+
+    }
+
+    methods = {
+
+    }
+
+    events = {
+
+    }
+
+    onLoad() {
+    }
+  }
+</script>

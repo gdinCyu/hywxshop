@@ -1,0 +1,58 @@
+<style lang="less">
+  .rules_title{
+    margin-top: 48rpx;
+    font-size: 40rpx;
+    font-weight: bold;
+  }
+  .rules_content{
+    line-height: 50rpx;
+    margin-top: 35rpx;
+    width: 685rpx;
+    height: 153rpx;
+    text-align: left;
+    font-size: 24rpx;
+  }
+
+</style>
+<template>
+  <view class="container">
+    <text class="rules_title">分享规则说明</text>
+    <text class="rules_content"><text style="font-weight: bold;">关于分享规则的说明文案，例如:</text>
+    1.目前仅有拥有小萌机器人的用户才能开启分享模式，需要进入APP内绑定小萌机器人才能分享。
+      2.一台小萌机器人仅能绑定一个分享用户，不可绑定多个等等。
+    </text>
+
+  </view>
+</template>
+
+<script>
+  import wepy from 'wepy'
+
+  export default class Sharerules extends wepy.page {
+    config = {
+      navigationBarTitleText: '分享活动'
+    }
+    components = {
+
+    }
+
+    data = {
+
+    }
+
+    computed = {
+
+    }
+
+    methods = {
+
+    }
+
+    events = {
+
+    }
+
+    onLoad() {
+    }
+  }
+</script>

@@ -1,0 +1,40 @@
+<style lang="less">
+
+</style>
+<template>
+  <view class="container page">
+    order
+  </view>
+</template>
+
+<script>
+  import wepy from 'wepy'
+
+  export default class Order extends wepy.page {
+      config = {
+          navigationBarTitleText: '订单中心'
+      }
+    components = {
+
+    }
+
+    data = {
+
+    }
+
+    computed = {
+
+    }
+
+    methods = {
+
+    }
+
+    events = {
+
+    }
+
+    onLoad() {
+    }
+  }
+</script>

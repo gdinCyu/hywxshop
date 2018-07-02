@@ -1,0 +1,70 @@
+<style lang="less">
+  .share_top{
+    width: 100%;
+    height: 384rpx;
+    background-color: #fff;
+    margin-top: 80rpx;
+  }
+
+  .text_1{
+    margin-top: 77rpx;
+    font-size: 32rpx;
+  }
+  .text_2{
+    margin: 48rpx 0 78rpx 0;
+    width: 570rpx;
+    font-size: 24rpx;
+  }
+  navigator{
+    display: flex;
+    align-items: flex-start;
+    margin-top: 47rpx;
+  }
+  .text_share{
+    text-decoration-line: underline;
+    font-size: 24rpx;
+    color: #EA5541;
+  }
+
+</style>
+<template>
+  <view class="container">
+    <view class="share_top"></view>
+    <text class="text_1">邀请好友得 <text style="color: #EA5541;font-size: 40rpx;font-weight: bold">60元现金</text> 奖励</text>
+    <text class="text_2">邀请好友购买小萌，TA下单购买确认收货后，您可以获得60元现金奖励，现金可立即提现</text>
+    <button class="btn_common">分 享 给 朋 友</button>
+    <navigator url="sharerules" hover-class="navigator-hover"><text class="text_share">分享规则说明</text></navigator>
+  </view>
+</template>
+
+<script>
+  import wepy from 'wepy'
+
+  export default class Share extends wepy.page {
+    config = {
+      navigationBarTitleText: '推广'
+    }
+    components = {
+
+    }
+
+    data = {
+
+    }
+
+    computed = {
+
+    }
+
+    methods = {
+
+    }
+
+    events = {
+
+    }
+
+    onLoad() {
+    }
+  }
+</script>

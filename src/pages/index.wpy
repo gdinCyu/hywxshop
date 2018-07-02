@@ -1,0 +1,62 @@
+<style lang="less">
+  .top_logo{
+    margin: 24rpx 0 48rpx 0;
+    overflow: hidden;
+    border-radius: 16rpx;
+    width: 702rpx;
+    height: 900rpx;
+  }
+  .top_logo_img{
+    width: 100%;
+    height: 100%;
+  }
+</style>
+<template>
+  <view class="container">
+    <view class="top_logo">
+      <image class="top_logo_img" src="{{src}}" mode="scaleToFill"></image>
+    </view>
+    <button class="btn_common" @tap="buy()">立 即 购 买</button>
+  </view>
+</template>
+
+<script>
+  import wepy from 'wepy'
+
+  export default class Index extends wepy.page {
+    config = {
+      navigationBarTitleText: '商城'
+    }
+    components = {
+
+    }
+
+    data = {
+        src:'../images/home/shangchengshouye_xiaoha.png',
+    }
+
+    computed = {
+
+    }
+
+    methods = {
+
+        /**
+         * 跳转到商城详情页
+         */
+        buy(){
+            wx.navigateTo({
+                url: 'mall/malldetail'
+            })
+        }
+    }
+
+    events = {
+
+    }
+
+    onLoad() {
+        console.log(123);
+    }
+  }
+</script>
