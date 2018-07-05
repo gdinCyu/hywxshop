@@ -1,8 +1,295 @@
 <style lang="less">
+  page{
+    width: 100%;
+  }
+  swiper{
+    margin-top: 4rpx;
+    width: 100%;
+    height: 750rpx;
+  }
+
+  .swiper-item{
+    width: 100%;
+    height: 100%;
+  }
+  .swiper-item image{
+    width: 100%;
+    height: 100%;
+  }
+  .detail_top{
+    box-sizing: border-box;
+    padding-left: 25rpx;
+    padding-right: 12rpx;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    margin-top: 4rpx;
+    width: 100%;
+    height: 225rpx;
+    background-color: #FFF;
+  }
+  .detail_top .dt_block1{
+    display: flex;
+    align-items: center;
+  }
+  .detail_top .latest-price{
+    color: #EA5541;
+    font-size: 34rpx;
+  }
+  .detail_top .original-price{
+    margin-top: 6rpx;
+    margin-left: 12rpx;
+    text-decoration: line-through;
+    color: #999999;
+    font-size: 24rpx;
+  }
+  .detail_top .price_des{
+    margin-left: 12rpx;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 160rpx;
+    height: 28rpx;
+    color: #EA5541;
+    font-size: 20rpx;
+    border: 1rpx solid #EA5541;
+  }
+  .detail_top .mall_title{
+    word-break:break-all;
+    text-align: left;
+    font-size: 34rpx;
+  }
+  .detail_top .mall_mark{
+    color: #999999;
+    font-size: 24rpx;
+  }
+
+  .mall_param{
+    box-sizing: border-box;
+    padding-left: 24rpx;
+    margin-top: 12rpx;
+    width: 100%;
+    height: 270rpx;
+    background-color: #fff;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+  .mall_param .param_block{
+    box-sizing: border-box;
+    padding:12rpx 0 12rpx 0;
+    display: flex;
+    align-items: center;
+  }
+  .mall_param .param1{
+    font-size: 20rpx;
+    color: #999999;
+  }
+  .mall_param .param_color{
+    border-radius: 4rpx;
+    margin-left: 24rpx;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #EA5541;
+    width: 118rpx;
+    height: 58rpx;
+  }
+  .mall_param .param_size{
+    border-radius: 4rpx;
+    margin-left: 24rpx;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #EA5541;
+    width: 216rpx;
+    height: 58rpx;
+  }
+  .mall_param .stepper{
+    box-sizing: border-box;
+    background-color: #ffffff;
+    border: 1px solid #999999;
+    width: 216rpx;
+    height: 58rpx;
+    margin-left: 24rpx;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .mall_param .param_color text,.mall_param .param_size text{
+    color: #ffffff;
+  }
+
+  .minus_btn{
+    margin-left: 24rpx;
+  }
+  .mall_param .param_block .minus_btn,.mall_param .param_block .plus_btn{
+    width: 58rpx;
+    height: 58rpx;
+    background-color: #ffffff;
+    border:1px solid #999999;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 50rpx;
+    color: #666666;
+  }
+  .mall_param .param_block .input_num{
+    border-left: none;
+    border-right: none;
+    border-top: 1px solid #999999;
+    border-bottom:1px solid #999999;
+    width: 94rpx;
+    height: 58rpx;
+    font-size: 24rpx;
+    text-align: center;
+  }
+  .mall_detail{
+    background-color: #ffffff;
+    flex-direction: column;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    margin-top: 12rpx;
+    height: 136rpx;
+  }
+  .mall_detail .detail_text{
+    text-align: left;
+    width:705rpx;
+    font-size: 28rpx;
+  }
+  .mall_detail .line{
+    margin-top: 31rpx;
+    height: 2rpx;
+    width: 705rpx;
+    background-color: #F7F7F7;
+  }
+  .detail_image{
+    width: 100%;
+    height: 1000rpx;
+  }
+  .detail_image image{
+    width: 100%;
+    height: 100%;
+  }
+
+  .foot_view{
+    border-top: 2rpx solid #F7F7F7;
+    background-color: #ffffff;
+    width: 100%;
+    height: 98rpx;
+    position: fixed;
+    left: 0;
+    bottom: 0;
+  }
+  .foot_line{
+    float: left;
+    width: 2rpx;
+    height: 98rpx;
+    background-color: #F7F7F7;
+  }
+  .foot_view .foot_view_left{
+    float: left;
+    width: 100rpx;
+    height: 98rpx;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  .foot_view_left text{
+    font-size: 20rpx;
+    color: #999999;
+  }
+  .foot_view .foot_btn{
+    position: relative;
+    bottom: 2rpx;
+    border-radius: 0;
+    font-size: 32rpx;
+    width: 549rpx;
+    height: 100rpx;
+  }
+  .foot_view image{
+    width: 44rpx;
+    height: 45rpx;
+  }
+
 
 </style>
 <template>
-  <view>这是商城详情页111</view>
+  <view class="malldetail container">
+    <view class="foot_view">
+      <view class="foot_view_left" @tap="goHome">
+        <image src="../../images/mall/icon_home.png" mode="scaleToFill"/>
+        <text>首页</text>
+      </view>
+      <view class="foot_line"></view>
+      <view class="foot_view_left" @tap="callGM">
+        <image src="../../images/mall/icon_customservice.png" mode="scaleToFill"/>
+        <text>客服</text>
+      </view>
+      <button class="foot_btn btn_common" @tap="buy()">立 即 购 买</button>
+    </view>
+    <swiper
+            indicator-dots="{{indicatorDots}}" indicator-active-color="{{indicatorActiveColor}}" autoplay="{{autoplay}}" circular="{{circular}}" vertical="{{vertical}}"
+            interval="{{interval}}" duration="{{duration}}" previous-margin="{{previousMargin}}px" next-margin="{{nextMargin}}px">
+      <block wx:for="{{swiperImages}}" wx:key="*this">
+        <swiper-item>
+          <view class="swiper-item">
+            <image src="{{item.src}}" mode="scaleToFill"></image>
+          </view>
+        </swiper-item>
+      </block>
+    </swiper>
+
+    <view class="detail_top">
+      <view class="dt_block1">
+        <text class="latest-price">¥299</text>
+        <text class="original-price">¥499</text>
+        <text class="price_des">首单直降200元</text>
+      </view>
+
+
+      <text class="mall_title">小萌智能教育学习机器人幼儿园小学课程早教娱乐</text>
+      <view class="mall_mark"><icon type="success" size="13"></icon>7天无理由退货</view>
+    </view>
+
+    <view class="mall_param">
+      <view class="param_block">
+        <text class="param1">颜色</text>
+        <view class="param_color">
+          <text>白色</text>
+        </view>
+      </view>
+
+      <view class="param_block">
+        <text class="param1">尺寸</text>
+        <view class="param_size">
+          <text>17*17*17cm</text>
+        </view>
+      </view>
+
+      <view class="param_block">
+        <text class="param1">数量</text>
+
+          <view class="minus_btn" @tap="minusNum">-</view>
+          <input class="input_num" type="number" />
+          <view class="plus_btn" @tap="plusNum">+</view>
+      </view>
+    </view>
+    <view class="mall_detail">
+      <text class="detail_text"><text style="color: #EA5541">丨</text>商品详情</text>
+      <view class="line"></view>
+    </view>
+      <block wx:for="{{mallImages}}" wx:key="*this">
+        <view class="detail_image">
+          <image src="{{item.src}}" mode="scaleToFill"></image>
+        </view>
+      </block>
+
+  </view>
 </template>
 
 <script>
@@ -17,7 +304,27 @@
     }
 
     data = {
-
+        swiperImages: [
+            {src:'http://img2.cache.netease.com/photo/0001/2017-04-28/CJ45TBS419BR0001.jpg'},
+            {src:'http://img3.cache.netease.com/photo/0001/2017-04-28/CJ45OVQ119BR0001.jpg'},
+            {src:'http://img4.cache.netease.com/photo/0001/2017-04-28/CJ45SRPM19BR0001.jpg'},
+            {src:'http://img5.cache.netease.com/photo/0001/2017-04-28/CJ45TEBP19BR0001.jpg'},
+            {src:'http://img3.cache.netease.com/photo/0001/2017-04-28/CJ45K8TC19BR0001.jpg'}
+        ],
+        mallImages:[
+            {src:'http://img6.cache.netease.com/photo/0001/2017-03-03/CEK07N2D19BR0001.jpg'},
+            {src:'http://img3.cache.netease.com/photo/0001/2015-08-07/B0EP3GL719BR0001.jpg'},
+            {src:'http://img6.cache.netease.com/photo/0001/2015-08-07/B0EP3BK119BR0001.jpg'}
+        ],
+        indicatorDots: true,
+        indicatorActiveColor: '#EA5541',
+        vertical: false,
+        autoplay: true,
+        circular: true,
+        interval: 2000,
+        duration: 500,
+        previousMargin: 0,
+        nextMargin: 0
     }
 
     computed = {
@@ -25,7 +332,25 @@
     }
 
     methods = {
+        minusNum(){
+            console.log('minus....');
+        },
 
+        plusNum(){
+            console.log('plus....');
+        },
+
+        goHome(){
+            wx.navigateBack();
+        },
+
+        callGM(){
+            console.log('呼叫客服');
+        },
+
+        buy(){
+
+        }
     }
 
     events = {

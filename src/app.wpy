@@ -1,8 +1,8 @@
 <style lang="less">
     @import './style/weui.less';
     .container{
-        width: 100vw;
-        height: 100vh;
+        width: 100%;
+        height: 100%;
         background-color: #F7F7F7;
         display: flex;
         justify-content: flex-start;
@@ -23,6 +23,9 @@
         background-color: #EA5541;
         width: 512rpx;
         height: 88rpx;
+    }
+    .btn_common::after{
+        border: none;
     }
 
     text{

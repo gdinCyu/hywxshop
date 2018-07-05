@@ -1,4 +1,8 @@
 <style lang="less">
+  page{
+    width: 100%;
+    height: 100%;
+  }
   .top_logo{
     margin: 24rpx 0 48rpx 0;
     overflow: hidden;
@@ -46,7 +50,7 @@
          */
         buy(){
             wx.navigateTo({
-                url: 'mall/malldetail'
+                url: '/pages/mall/malldetail'
             })
         }
     }
